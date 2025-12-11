@@ -3,7 +3,7 @@ const jaar = document.getElementById("jaar");
 
 alleAfbeeldingen.forEach(afbeelding => {
   afbeelding.addEventListener('mouseover', function(){
-    jaar.innerText = afbeelding.alt;
+    jaar.innerText = afbeelding.getAttribute("data-jaar");
   })
 })
 
