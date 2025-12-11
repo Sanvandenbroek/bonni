@@ -6,14 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="js" href="style.css">
   <style>
     /* 3. Spacing the Items */
     /* Instead of transform, we use negative animation-delay */
     /* This "fast forwards" each item to its spot on the track */
     /* Use new sibling-count and sibling-index for a simple and dynamic approach, or manually hardcode all the nth-child's */
     /* .item {
-      animation-delay: calc(-60s / sibling-count() * (sibling-index() - 1));
+      animation-delay: calc(-30s / sibling-count() * (sibling-index() - 1));
     } */
 
     .item:nth-child(0) {
@@ -78,16 +77,6 @@
 
     .item:nth-child(16) {
       animation-delay: calc(-30s / 16 * 15);
-    }
-
-    /* Image Styling */
-    .item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      /* Center the image on the path line */
-      transform: translate(-50%, -50%);
     }
 
     /* The Animation: Move from 0% of path to 100% of path */
