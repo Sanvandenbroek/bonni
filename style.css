@@ -120,6 +120,38 @@ a {
   pointer-events: auto;
 }
 
+.h-scroll{
+    display: flex;
+    position: relative;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    top: 70px;
+    height: 90vh;
+    /* background-color: aqua; */
+
+}
+
+
+.topbar-book {
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    padding: 20px 40px;
+    background-color: white;
+
+    font-family: helvetica, Arial, sans-serif;
+    font-size: 30px;     /* zelfde als nummers */
+    font-weight: 400;
+
+}
+
+.h-100{
+    max-height:100% ;
+}
 .boekpagina{
 
     height: 100%;
