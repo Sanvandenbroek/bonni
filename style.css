@@ -1,0 +1,187 @@
+
+body{
+    margin: 0px;
+    background-color: white;
+    row-gap: 20px;
+    gap: 20px;
+     /* justify-content: center;
+     align-items: center;
+    align-content: space-evenly; */
+}
+
+
+
+@font-face {
+  font-family: "home-font";
+  src:
+    
+    
+    url("/fonts/Home\ Sweet\ Home.otf") format("opentype");
+}
+
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    padding: 20px 40px;
+    background-color: white;
+
+    font-family: helvetica, Arial, sans-serif;
+    font-size: 30px;     /* zelfde als nummers */
+    font-weight: 400;
+    
+}
+
+.topbar-book {
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    padding: 20px 40px;
+    background-color: white;
+
+    font-family: helvetica, Arial, sans-serif;
+    font-size: 30px;     /* zelfde als nummers */
+    font-weight: 400;
+    
+}
+
+h1 {
+    margin: 0;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 50px;     /* zelfde als header */
+}
+
+
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+
+
+.list-img{
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;     /* nooit naar nieuwe rij */
+    justify-content: space-between;
+    width: 100%;
+    overflow-x: auto;
+    gap: 10px;             /* ruimte tussen kolommen */
+    overflow-x: auto;      /* scrollen als nodig */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.box {
+    flex: 0 0 calc((100% - 9 * 10px) / 10); 
+    /* 10 kolommen - gap wordt meegenomen */
+    
+    height: 200px;         /* zelf kiezen */
+    background: blue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.h2{
+     margin: 0;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 50px; 
+}
+
+.box2{
+  
+    flex: 0 0 calc((100% - 9 * 10px) / 10); 
+    /* 10 kolommen - gap wordt meegenomen */
+    
+    height: 200px;         /* zelf kiezen */
+    background: blue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px;
+    box-sizing: border-box;  
+}
+
+
+
+/* De container onder de header */
+.foto-container{
+  margin: 40px auto;      /* afstand boven/onder = 40px, horizontaal gecentreerd */
+  padding: 20px;          /* binnenruimte van het kader */
+  width: 50%;     /* past zich aan de grootte van de foto aan */
+  border: 2px solid #000000; /* zichtbaar kader */
+  background-color: yellow;
+  border-radius: 10px;    /* afgeronde hoeken (optioneel) */
+}
+
+/* Foto centreren */
+.foto-container img {
+  display: block;         /* zodat img niet inline is */
+  margin: 0 auto;         /* centreert de foto horizontaal */
+  max-width: 100%;        /* voorkomt dat de foto te groot wordt */
+  height: auto;
+}
+
+.bar{
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    padding: 20px 40px;
+    background-color: white;
+
+    font-family: home-font, Arial, sans-serif;
+    font-size: 30px;     /* zelfde als nummers */
+    font-weight: 400; 
+}
+
+/* .scrollmenu{
+  background-color: red;
+  overflow: auto;
+  white-space: nowrap;
+  display: inline-block;
+  color: white;
+  text-align: center;
+  height: 90vh;
+  text-decoration: none;
+
+} */
+
+.h-100{
+    max-height:100% ; 
+}
+
+.h-scroll{
+    display: flex;
+    position: relative;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    top: 70px;
+    height: 90vh;
+    /* background-color: aqua; */
+    
+}
+
+.boekpagina{
+    
+    height: 100%;
+    max-height: 100vh;
+    scroll-snap-align: start;
+    position: relative;
+    flex-shrink: 0;
+}
