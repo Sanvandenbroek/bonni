@@ -31,10 +31,18 @@ a {
 }
 
 .box {
+  flex: 0 0 calc((100% - 9 * 10px) / 10);
+  /* 10 kolommen - gap wordt meegenomen */
+
+  height: 200px;
+  /* zelf kiezen */
+  /* background: blue; */
   display: flex;
   flex-direction: column;
-  /* background-color: blue; */
-  height: 100%
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 .number {
@@ -66,25 +74,29 @@ a {
   /* display: grid;
     grid-template-columns: auto auto auto; */
 
-  display: grid;
-
-  /* This says: Create as many columns as will fit. */
-  /* Each column must be at least 300px wide, but can stretch (1fr) to fill space. */
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-
+  display: flex;
+  flex-wrap: wrap;
+  /* nooit naar nieuwe rij */
+  justify-content: space-between;
+  width: 100%;
+  overflow-x: auto;
   gap: 10px;
-  text-align: center;
-  margin: 5px;
+  /* ruimte tussen kolommen */
+  overflow-x: auto;
+  /* scrollen als nodig */
+  padding: 20px;
+  box-sizing: border-box;
 }
 
-.header-year{
+.header-year {
   position: absolute;
   top: 0;
   font-size: 300px;
   font-weight: 500;
   z-index: 20;
 }
-.introduction{
+
+.introduction {
   position: absolute;
   bottom: 100px;
   right: 100px;
@@ -95,10 +107,12 @@ a {
   font-family: "HomeSweetHome";
   pointer-events: none;
 }
-.introduction p{
+
+.introduction p {
   margin-top: 0;
 }
-.introduction span{
+
+.introduction span {
   font-size: 35px;
 }
 
