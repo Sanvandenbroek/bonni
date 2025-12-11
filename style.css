@@ -120,6 +120,15 @@ a {
   pointer-events: auto;
 }
 
+.boekpagina{
+
+    height: 100%;
+    max-height: 100vh;
+    scroll-snap-align: start;
+    position: relative;
+    flex-shrink: 0;
+}
+
 /* Fonts */
 @font-face {
   font-family: "HomeSweetHome";
