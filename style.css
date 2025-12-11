@@ -1,17 +1,7 @@
 body {
   margin: 0px;
-  /* background-color: greenyellow; */
-
-
-  row-gap: 20px;
-  gap: 20px;
-  /* justify-content: center;
-     align-items: center;
-    align-content: space-evenly; */
   font-family: Helvetica, Arial, sans-serif;
-
 }
-
 
 .topbar {
   display: flex;
@@ -85,7 +75,7 @@ a {
   pointer-events: none;
 }
 
-.introduction {
+#introduction {
   position: absolute;
   bottom: 100px;
   right: 100px;
@@ -97,11 +87,11 @@ a {
   pointer-events: none;
 }
 
-.introduction p {
+#introduction p {
   margin-top: 0;
 }
 
-.introduction span {
+#introduction span {
   font-size: 35px;
 }
 
@@ -120,7 +110,6 @@ a {
 
 }
 
-
 .topbar-book {
   position: fixed;
   width: 100%;
@@ -136,7 +125,6 @@ a {
   font-size: 30px;
   /* zelfde als nummers */
   font-weight: 400;
-
 }
 
 .h-100 {
@@ -144,7 +132,6 @@ a {
 }
 
 .boekpagina {
-
   height: 100%;
   max-height: 100vh;
   scroll-snap-align: start;
@@ -156,4 +143,75 @@ a {
 @font-face {
   font-family: "HomeSweetHome";
   src: url("./fonts/Home\ Sweet\ Home.otf");
+}
+
+/* index.html */
+.item {
+  position: absolute;
+  top: 250px;
+  left: 250px;
+  width: 200px;
+  height: auto;
+  offset-path: path('M 500 0 A 500 250 0 1 1 500 500 A 500 250 0 1 1 500 0');
+  /* Keeps the image upright (0deg) relative to the screen */
+  offset-rotate: 0deg;
+  /* Animate along the path */
+  animation: move-on-path 30s linear infinite;
+  z-index: 10;
+}
+
+/* Pause the entire container rotation when hovering any image */
+.oval-container:has(img:hover) {
+  animation-play-state: paused;
+}
+
+/* Also pause all items' counter-rotation */
+.oval-container:has(img:hover) .item {
+  animation-play-state: paused;
+}
+
+@media(max-width: 1024px) {
+  #jaar {
+    font-size: 125px;
+  }
+
+  #introduction span {
+    font-size: 20px;
+  }
+
+  #introduction {
+    font-size: 15px;
+    right: 25px;
+    bottom: 25px;
+    width: 55%;
+  }
+
+  .item {
+    width: 200px;
+    left: 200px;
+  }
+}
+
+@media(max-width: 550px) {
+  #jaar {
+    font-size: 100px
+  }
+
+  #introduction span {
+    font-size: 20px;
+  }
+
+  #introduction {
+    font-size: 8px;
+    right: 25px;
+    bottom: 25px;
+    width: 55%;
+  }
+
+  .item {
+    offset-path: path('M 200 0 A 200 100 0 1 1 200 200 A 200 100 0 1 1 200 0');
+    width: 100px;
+    top: 200px;
+    left: 100px
+  }
 }

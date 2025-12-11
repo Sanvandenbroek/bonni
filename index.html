@@ -8,38 +8,6 @@
   <link rel="stylesheet" href="style.css">
   <link rel="js" href="style.css">
   <style>
-    .oval-container {
-      position: absolute;
-      width: 800px;
-      height: 500px;
-      top: 30%;
-      left: 20%;
-    }
-
-    .item {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 200px;
-      height: auto;
-      offset-path: path('M 500 0 A 500 250 0 1 1 500 500 A 500 250 0 1 1 500 0');
-      /* Keeps the image upright (0deg) relative to the screen */
-      offset-rotate: 0deg;
-      /* Animate along the path */
-      animation: move-on-path 30s linear infinite;
-      z-index: 10;
-    }
-
-    /* Pause the entire container rotation when hovering any image */
-    .oval-container:has(img:hover) {
-      animation-play-state: paused;
-    }
-
-    /* Also pause all items' counter-rotation */
-    .oval-container:has(img:hover) .item {
-      animation-play-state: paused;
-    }
-
     /* 3. Spacing the Items */
     /* Instead of transform, we use negative animation-delay */
     /* This "fast forwards" each item to its spot on the track */
@@ -185,7 +153,7 @@
       <a href=" list1.html"><img data-jaar="1986" src="img/6.png"></a>
     </div>
   </div>
-  <div class="introduction">
+  <div id="introduction">
     <span>Introduction</span>
     <p>
       We often meet people in the specific roles they play in our lives — a friend, a parent, a neighbor, a colleague.
