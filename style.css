@@ -152,5 +152,5 @@ a {
 /* Fonts */
 @font-face {
   font-family: "HomeSweetHome";
-  src: url("/fonts/Home\ Sweet\ Home.otf");
+  src: url("./fonts/Home\ Sweet\ Home.otf");
 }
