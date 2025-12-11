@@ -30,8 +30,13 @@
       z-index: 10;
     }
 
-    /* Pause everything on hover */
-    .oval-container:hover .item {
+    /* Pause the entire container rotation when hovering any image */
+    .oval-container:has(img:hover) {
+      animation-play-state: paused;
+    }
+
+    /* Also pause all items' counter-rotation */
+    .oval-container:has(img:hover) .item {
       animation-play-state: paused;
     }
 
