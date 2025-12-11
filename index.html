@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="js" href="style.css">
   <style>
     .oval-container {
       position: absolute;
@@ -30,9 +31,9 @@
     }
 
     /* Pause everything on hover */
-    /* .oval-container:hover .item {
+    .oval-container:hover .item {
       animation-play-state: paused;
-    } */
+    }
 
     /* 3. Spacing the Items */
     /* Instead of transform, we use negative animation-delay */
@@ -126,15 +127,15 @@
 </head>
 
 <body>
-  <div class="header-year">
+  <div id="jaar" class="header-year">
     1960
   </div>
   <div class="oval-container">
-    <div class="item">
-      <a href="/list.html"><img src="/img/1.png"></a>
+    <div class="item" id>
+      <a href="/list.html"><img alt='1970' src="/img/1.png"></a>
     </div>
     <div class="item">
-      <a href="/list.html"><img src="/img/2.png"></a>
+      <a href="/list.html"><img alt='1972' src="/img/2.png"></a>
     </div>
     <div class="item">
       <a href="/list.html"><img src="/img/3.png"></a>
@@ -194,5 +195,7 @@
   </div>
 
 </body>
+
+<script src="index.js" type="text/javascript" defer></script>
 
 </html>
