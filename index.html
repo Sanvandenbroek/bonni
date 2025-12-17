@@ -156,8 +156,16 @@
     </p>
   </div>
 
-</body>
+  <script type="text/javascript">
+    const alleAfbeeldingen = document.querySelectorAll("img");
+    const jaar = document.getElementById("jaar");
 
-<script src="index.js" type="text/javascript" defer></script>
+    alleAfbeeldingen.forEach(afbeelding => {
+      afbeelding.addEventListener('mouseover', function () {
+        jaar.innerText = afbeelding.getAttribute("data-jaar");
+      })
+    });
+  </script>
+</body>
 
 </html>
