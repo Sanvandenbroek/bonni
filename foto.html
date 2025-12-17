@@ -31,6 +31,7 @@
     background: none;
     border: none;
     cursor: pointer;
+    color: black;
     /* outline: inherit; */
   }
 
@@ -74,7 +75,7 @@
     const image = document.getElementById("image");
     let counter = params.get("counter") || 1;
     image.src = `img/${counter}.png`;
-    console.log('init');
+    console.log("init");
 
     // Arrow buttons left/right will update image
     document.addEventListener("keyup", function (e) {
@@ -89,12 +90,12 @@
     const amountOfImages = 10;
     function nextImage() {
       counter = (counter + 1) % amountOfImages;
-      updateQueryStringParam('counter', counter);
+      updateQueryStringParam("counter", counter);
       image.src = `img/${counter}.png`;
     }
     function previousImage() {
       counter = (counter - 1 + amountOfImages) % amountOfImages;
-      updateQueryStringParam('counter', counter);
+      updateQueryStringParam("counter", counter);
       image.src = `img/${counter}.png`;
     }
 
@@ -102,7 +103,7 @@
     function updateQueryStringParam(key, value) {
       let url = new URL(window.location.href);
       url.searchParams.set(key, value); // Add or update the parameter
-      window.history.replaceState({}, '', url);
+      window.history.replaceState({}, "", url);
     }
   </script>
 </body>
