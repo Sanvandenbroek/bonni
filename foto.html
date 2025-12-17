@@ -1,37 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>fotopagina 1</title>
-     <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>fotopagina 1</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
+
+<style>
+  .foto-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  .foto-container img {
+    display: block;
+    max-height: 70vh;
+    margin: auto;
+  }
+
+  .foto-container span {
+    font-size: 50px;
+  }
+
+  .foto-buttons {
+    background: none;
+    border: none;
+    cursor: pointer;
+    /* outline: inherit; */
+  }
+
+  .foto-parent {
+    width: 90%;
+  }
+</style>
+
 <body>
-   
+  <nav class="topbar">
+    <a href="index.html" class="top-left">Home</a>
+    <a href="list1.html" class="top-right">List</a>
+  </nav>
 
- <header class="topbar">
+  <!-- <header class="bar">
     <a href="">
-        <div class="top-left">Home</div>
+      <div class="top-left">Oorlogsjaren in de de gitsgotelei</div>
     </a>
     <a href="list.html">
-    <div class="top-right">Book</div>
+      <div class="top-right">1942</div>
     </a>
-</header>
+  </header> -->
 
- <header class="bar">
-    <a href="">
-        <div class="top-left">Oorlogsjaren in de de gitsgotelei</div>
-    </a>
-    <a href="list.html">
-    <div class="top-right">1942</div>
-    </a>
-</header>
+  <div class="foto-container">
+    <button id="previousImage" class="foto-buttons">
+      <span>&lt;</span>
+    </button>
 
+    <div class="foto-parent">
+      <img id="image" src="img/2.png" alt="" />
+    </div>
+    <button id="nextImage" class="foto-buttons">
+      <span>&gt;</span>
+    </button>
+  </div>
 
-<div class="foto-container">
-    <img class="list-img" src="img/50_p2_3.png" alt="">
-</div>
+  <script type="text/javascript">
+    let params = new URLSearchParams(document.location.search);
+    const nextImageButton = document.getElementById("nextImage");
+    const previousImageButton = document.getElementById("previousImage");
+    const image = document.getElementById("image");
+    let counter = params.get("counter") || 1;
+    image.src = `img/${counter}.png`;
+    console.log('init');
 
+    // Arrow buttons left/right will update image
+    document.addEventListener("keyup", function (e) {
+      if (e.code === "ArrowLeft") previousImage();
+      else if (e.code === "ArrowRight") nextImage();
+    });
 
+    nextImageButton.addEventListener("click", () => nextImage());
+    previousImageButton.addEventListener("click", () => previousImage());
+
+    // TODO: figure out how to handle the amountOfImages in a certain book
+    const amountOfImages = 10;
+    function nextImage() {
+      counter = (counter + 1) % amountOfImages;
+      updateQueryStringParam('counter', counter);
+      image.src = `img/${counter}.png`;
+    }
+    function previousImage() {
+      counter = (counter - 1 + amountOfImages) % amountOfImages;
+      updateQueryStringParam('counter', counter);
+      image.src = `img/${counter}.png`;
+    }
+
+    // Helper function to update the current URL and searchParam
+    function updateQueryStringParam(key, value) {
+      let url = new URL(window.location.href);
+      url.searchParams.set(key, value); // Add or update the parameter
+      window.history.replaceState({}, '', url);
+    }
+  </script>
 </body>
+
 </html>

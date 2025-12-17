@@ -186,3 +186,39 @@ a {
     left: 100px
   }
 }
+
+.imageSectionBoek {
+  position: fixed;
+  top: 80px; /* Height of topbar */
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  /* Optional: smooth snapping between images */
+  scroll-snap-type: x mandatory;
+}
+
+.imageSectionBoek img {
+  height: 100%; /* Fill the available vertical space */
+  width: auto; /* Maintain aspect ratio */
+  flex-shrink: 0; /* Prevent images from shrinking */
+  object-fit: contain; /* Ensure no cropping */
+  scroll-snap-align: start; /* Optional: snap to start of each image */
+}
+
+/* Optional: Style the scrollbar */
+/* .imageSectionBoek::-webkit-scrollbar {
+  height: 10px;
+}
+.imageSectionBoek::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+.imageSectionBoek::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+.imageSectionBoek::-webkit-scrollbar-thumb:hover {
+  background: #555;
+} */
