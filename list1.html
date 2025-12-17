@@ -9,6 +9,73 @@
 </head>
 
 <body>
+  <style>
+    #foto-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1;
+      background-color: white;
+    }
+
+    .foto-parent {
+      max-width: 80%;
+      max-height: 70vh;
+    }
+
+    .foto-parent img {
+      display: block;
+      max-height: 70vh;
+      max-width: 100%;
+      height: auto;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .foto-buttons {
+      position: fixed;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: black;
+      font-size: 50px;
+      padding: 10px 20px;
+      z-index: 10;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    #previousImage {
+      left: 20px;
+    }
+
+    #nextImage {
+      right: 20px;
+    }
+
+    @media(max-width: 700px) {
+      .foto-parent {
+        max-width: 70%;
+      }
+
+      .foto-buttons {
+        padding: 10px 10px;
+      }
+
+      #previousImage {
+        left: 0;
+      }
+
+      #nextImage {
+        right: 0;
+      }
+    }
+  </style>
 
   <nav class="topbar">
     <a href="index.html" class="top-left">Home</a>
@@ -16,354 +83,417 @@
   </nav>
 
 
+  <div id="foto-container">
+    <button id="previousImage" class="foto-buttons">
+      <span>&lt;</span>
+    </button>
+
+    <div class="foto-parent">
+      <img id="image" alt="" />
+    </div>
+
+    <button id="nextImage" class="foto-buttons">
+      <span>&gt;</span>
+    </button>
+  </div>
+
   <div class="container">
 
     <div class="box">
       <span class="number">1</span>
-      <a href="foto.html?counter=1" class="image-wrapper">
+      <div class="image-wrapper">
         <img class="list-img" src="img/1.png" alt="">
-      </a>
+      </div>
     </div>
 
     <div class="box">
       <span class="number">2</span>
-      <a href="foto.html?counter=2" class="image-wrapper">
+      <div class="image-wrapper">
         <img class="list-img" src="img/2.png" alt="">
-      </a>
+      </div>
     </div>
 
     <div class="box">
       <span class="number">3</span>
-      <a href="foto.html?counter=3" class="image-wrapper">
+      <div class="image-wrapper">
         <img class="list-img" src="img/3.png" alt="">
-      </a>
+      </div>
     </div>
 
     <div class="box">
       <span class="number">4</span>
-      <a href="foto.html?counter=4" class="image-wrapper">
+      <div class="image-wrapper">
         <img class="list-img" src="img/4.png" alt="">
-      </a>
+      </div>
     </div>
 
     <div class="box">
       <span class="number">5</span>
-      <a href="foto.html?counter=5" class="image-wrapper">
+      <div class="image-wrapper">
         <img class="list-img" src="img/5.png" alt="">
-      </a>
+      </div>
     </div>
 
     <div class="box">
       <span class="number">6</span>
-      <a href="foto.html?counter=6" class="image-wrapper">
+      <div class="image-wrapper">
         <img class="list-img" src="img/6.png" alt="">
-      </a>
+      </div>
     </div>
 
     <div class="box">
       <span class="number">7</span>
-      <a href="foto.html?counter=7" class="image-wrapper">
+      <div class="image-wrapper">
         <img class="list-img" src="img/7.png" alt="">
-      </a>
+      </div>
     </div>
 
     <div class="box">
       <span class="number">8</span>
-      <a href="foto.html?counter=8" class="image-wrapper">
+      <div class="image-wrapper">
         <img class="list-img" src="img/8.png" alt="">
-      </a>
+      </div>
     </div>
 
     <div class="box">
       <span class="number">9</span>
-      <a href="foto.html?counter=9" class="image-wrapper">
+      <div class="image-wrapper">
         <img class="list-img" src="img/9.png" alt="">
-      </a>
+      </div>
     </div>
 
     <div class="box">
       <span class="number">10</span>
-      <a href="foto.html?counter=10" class="image-wrapper">
+      <div class="image-wrapper">
         <img class="list-img" src="img/10.png" alt="">
-      </a>
+      </div>
     </div>
     <div class="box">
       <span class="number">1</span>
-      <a href="foto.html?counter=1" class="image-wrapper">
+      <div class="image-wrapper">
         <img class="list-img" src="img/1.png" alt="">
-      </a>
+      </div>
     </div>
 
     <div class="box">
       <span class="number">2</span>
-      <a href="foto.html?counter=2" class="image-wrapper">
+      <div class="image-wrapper">
         <img class="list-img" src="img/2.png" alt="">
-      </a>
+      </div>
     </div>
 
     <div class="box">
       <span class="number">3</span>
-      <a href="foto.html?counter=3" class="image-wrapper">
+      <div class="image-wrapper">
         <img class="list-img" src="img/3.png" alt="">
-      </a>
+      </div>
     </div>
 
     <div class="box">
       <span class="number">4</span>
-      <a href="foto.html?counter=4" class="image-wrapper">
+      <div class="image-wrapper">
         <img class="list-img" src="img/4.png" alt="">
-      </a>
+      </div>
     </div>
 
     <div class="box">
       <span class="number">5</span>
-      <a href="foto.html?counter=5" class="image-wrapper">
+      <div class="image-wrapper">
         <img class="list-img" src="img/5.png" alt="">
-      </a>
+      </div>
     </div>
 
     <div class="box">
       <span class="number">6</span>
-      <a href="foto.html?counter=6" class="image-wrapper">
+      <div class="image-wrapper">
         <img class="list-img" src="img/6.png" alt="">
-      </a>
+      </div>
     </div>
 
     <div class="box">
       <span class="number">7</span>
-      <a href="foto.html?counter=2" class="image-wrapper">
+      <div class="image-wrapper">
         <img class="list-img" src="img/7.png" alt="">
-      </a>
+      </div>
     </div>
 
     <div class="box">
       <span class="number">8</span>
-      <a href="foto.html?counter=2" class="image-wrapper">
+      <div class="image-wrapper">
         <img class="list-img" src="img/8.png" alt="">
-      </a>
+      </div>
     </div>
 
     <div class="box">
       <span class="number">9</span>
-      <a href="foto.html?counter=2" class="image-wrapper">
+      <div class="image-wrapper">
         <img class="list-img" src="img/9.png" alt="">
-      </a>
+      </div>
     </div>
 
     <div class="box">
       <span class="number">10</span>
-      <a href="foto.html?counter=2" class="image-wrapper">
+      <div class="image-wrapper">
         <img class="list-img" src="img/10.png" alt="">
-      </a>
+      </div>
     </div>
     <div class="box">
       <span class="number">1</span>
-      <a href="foto.html?counter=2" class="image-wrapper">
+      <div class="image-wrapper">
         <img class="list-img" src="img/1.png" alt="">
-      </a>
+      </div>
     </div>
 
     <div class="box">
       <span class="number">2</span>
-      <a href="foto.html?counter=2" class="image-wrapper">
+      <div class="image-wrapper">
         <img class="list-img" src="img/2.png" alt="">
-      </a>
+      </div>
     </div>
 
     <div class="box">
       <span class="number">3</span>
-      <a href="foto.html?counter=2" class="image-wrapper">
+      <div class="image-wrapper">
         <img class="list-img" src="img/3.png" alt="">
-      </a>
+      </div>
     </div>
 
     <div class="box">
       <span class="number">4</span>
-      <a href="foto.html?counter=2" class="image-wrapper">
+      <div class="image-wrapper">
         <img class="list-img" src="img/4.png" alt="">
-      </a>
+      </div>
     </div>
 
     <div class="box">
       <span class="number">5</span>
-      <a href="foto.html?counter=2" class="image-wrapper">
+      <div class="image-wrapper">
         <img class="list-img" src="img/5.png" alt="">
-      </a>
+      </div>
     </div>
 
     <div class="box">
       <span class="number">6</span>
-      <a href="foto.html?counter=2" class="image-wrapper">
+      <div class="image-wrapper">
         <img class="list-img" src="img/6.png" alt="">
-      </a>
+      </div>
     </div>
 
     <div class="box">
       <span class="number">7</span>
-      <a href="foto.html?counter=2" class="image-wrapper">
+      <div class="image-wrapper">
         <img class="list-img" src="img/7.png" alt="">
-      </a>
+      </div>
     </div>
 
     <div class="box">
       <span class="number">8</span>
-      <a href="foto.html?counter=2" class="image-wrapper">
+      <div class="image-wrapper">
         <img class="list-img" src="img/8.png" alt="">
-      </a>
+      </div>
     </div>
 
     <div class="box">
       <span class="number">9</span>
-      <a href="foto.html?counter=2" class="image-wrapper">
+      <div class="image-wrapper">
         <img class="list-img" src="img/9.png" alt="">
-      </a>
+      </div>
     </div>
 
     <div class="box">
       <span class="number">10</span>
-      <a href="foto.html?counter=2" class="image-wrapper">
+      <div class="image-wrapper">
         <img class="list-img" src="img/10.png" alt="">
-      </a>
+      </div>
     </div>
     <div class="box">
       <span class="number">1</span>
-      <a href="foto.html?counter=2" class="image-wrapper">
+      <div class="image-wrapper">
         <img class="list-img" src="img/1.png" alt="">
-      </a>
+      </div>
     </div>
 
     <div class="box">
       <span class="number">2</span>
-      <a href="foto.html?counter=2" class="image-wrapper">
+      <div class="image-wrapper">
         <img class="list-img" src="img/2.png" alt="">
-      </a>
+      </div>
     </div>
 
     <div class="box">
       <span class="number">3</span>
-      <a href="foto.html?counter=2" class="image-wrapper">
+      <div class="image-wrapper">
         <img class="list-img" src="img/3.png" alt="">
-      </a>
+      </div>
     </div>
 
     <div class="box">
       <span class="number">4</span>
-      <a href="foto.html?counter=2" class="image-wrapper">
+      <div class="image-wrapper">
         <img class="list-img" src="img/4.png" alt="">
-      </a>
+      </div>
     </div>
 
     <div class="box">
       <span class="number">5</span>
-      <a href="foto.html?counter=2" class="image-wrapper">
+      <div class="image-wrapper">
         <img class="list-img" src="img/5.png" alt="">
-      </a>
+      </div>
     </div>
 
     <div class="box">
       <span class="number">6</span>
-      <a href="foto.html?counter=2" class="image-wrapper">
+      <div class="image-wrapper">
         <img class="list-img" src="img/6.png" alt="">
-      </a>
+      </div>
     </div>
 
     <div class="box">
       <span class="number">7</span>
-      <a href="foto.html?counter=2" class="image-wrapper">
+      <div class="image-wrapper">
         <img class="list-img" src="img/7.png" alt="">
-      </a>
+      </div>
     </div>
 
     <div class="box">
       <span class="number">8</span>
-      <a href="foto.html?counter=2" class="image-wrapper">
+      <div class="image-wrapper">
         <img class="list-img" src="img/8.png" alt="">
-      </a>
+      </div>
     </div>
 
     <div class="box">
       <span class="number">9</span>
-      <a href="foto.html?counter=2" class="image-wrapper">
+      <div class="image-wrapper">
         <img class="list-img" src="img/9.png" alt="">
-      </a>
+      </div>
     </div>
 
     <div class="box">
       <span class="number">10</span>
-      <a href="foto.html?counter=2" class="image-wrapper">
+      <div class="image-wrapper">
         <img class="list-img" src="img/10.png" alt="">
-      </a>
+      </div>
     </div>
     <div class="box">
       <span class="number">1</span>
-      <a href="foto.html?counter=2" class="image-wrapper">
+      <div class="image-wrapper">
         <img class="list-img" src="img/1.png" alt="">
-      </a>
+      </div>
     </div>
 
     <div class="box">
       <span class="number">2</span>
-      <a href="foto.html?counter=2" class="image-wrapper">
+      <div class="image-wrapper">
         <img class="list-img" src="img/2.png" alt="">
-      </a>
+      </div>
     </div>
 
     <div class="box">
       <span class="number">3</span>
-      <a href="foto.html?counter=2" class="image-wrapper">
+      <div class="image-wrapper">
         <img class="list-img" src="img/3.png" alt="">
-      </a>
+      </div>
     </div>
 
     <div class="box">
       <span class="number">4</span>
-      <a href="foto.html?counter=2" class="image-wrapper">
+      <div class="image-wrapper">
         <img class="list-img" src="img/4.png" alt="">
-      </a>
+      </div>
     </div>
 
     <div class="box">
       <span class="number">5</span>
-      <a href="foto.html?counter=2" class="image-wrapper">
+      <div class="image-wrapper">
         <img class="list-img" src="img/5.png" alt="">
-      </a>
+      </div>
     </div>
 
     <div class="box">
       <span class="number">6</span>
-      <a href="foto.html?counter=2" class="image-wrapper">
+      <div class="image-wrapper">
         <img class="list-img" src="img/6.png" alt="">
-      </a>
+      </div>
     </div>
 
     <div class="box">
       <span class="number">7</span>
-      <a href="foto.html?counter=2" class="image-wrapper">
+      <div class="image-wrapper">
         <img class="list-img" src="img/7.png" alt="">
-      </a>
+      </div>
     </div>
 
     <div class="box">
       <span class="number">8</span>
-      <a href="foto.html?counter=2" class="image-wrapper">
+      <div class="image-wrapper">
         <img class="list-img" src="img/8.png" alt="">
-      </a>
+      </div>
     </div>
 
     <div class="box">
       <span class="number">9</span>
-      <a href="foto.html?counter=2" class="image-wrapper">
+      <div class="image-wrapper">
         <img class="list-img" src="img/9.png" alt="">
-      </a>
+      </div>
     </div>
 
     <div class="box">
       <span class="number">10</span>
-      <a href="foto.html?counter=2" class="image-wrapper">
+      <div class="image-wrapper">
         <img class="list-img" src="img/10.png" alt="">
-      </a>
+      </div>
     </div>
   </div>
+  <script type="text/javascript">
+    const images = document.querySelectorAll(".list-img");
+    const amountOfImages = images.length;
+    const fotoContainer = document.getElementById("foto-container");
+    const image = document.getElementById("image");
+    const nextImageButton = document.getElementById("nextImage");
+    const previousImageButton = document.getElementById("previousImage");
+    let counter;
+    let clickOutsideHandler;
+
+    for (const [index, imageClicked] of images.entries()) {
+      imageClicked.addEventListener("click", function (e) {
+        e.stopPropagation();
+        counter = index + 1;
+        image.src = `img/${counter}.png`;
+        fotoContainer.style.display = "flex";
+
+        if (clickOutsideHandler) document.removeEventListener("click", clickOutsideHandler);
+
+        // Clicking outside the image will close the imageContainer
+        clickOutsideHandler = function (e) {
+          if (!image.contains(e.target) && !nextImageButton.contains(e.target) && !previousImageButton.contains(e.target) && fotoContainer.style.display === "flex") {
+            fotoContainer.style.display = "none";
+          }
+        };
+
+        document.addEventListener("click", clickOutsideHandler);
+      });
+    }
+
+    // Arrow buttons left/right will update image
+    document.addEventListener("keyup", function (e) {
+      if (e.code === "Escape") fotoContainer.style.display = "none";
+      else if (e.code === "ArrowLeft") previousImage();
+      else if (e.code === "ArrowRight") nextImage();
+    });
+
+    nextImageButton.addEventListener("click", () => nextImage());
+    previousImageButton.addEventListener("click", () => previousImage());
+
+    function nextImage() {
+      counter = (counter + 1) % amountOfImages;
+      image.src = `img/${counter}.png`;
+    }
+    function previousImage() {
+      counter = (counter - 1 + amountOfImages) % amountOfImages;
+      image.src = `img/${counter}.png`;
+    }
+  </script>
 </body>
 
 </html>

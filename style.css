@@ -48,6 +48,7 @@ a {
   width: auto;
   height: auto;
   object-fit: contain;
+  cursor: pointer;
 }
 
 .image-wrapper {
