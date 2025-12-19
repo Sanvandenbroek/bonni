@@ -2,13 +2,14 @@ html, body {
   overflow-x: hidden;
   position: relative;
   font-family: Helvetica, Arial, sans-serif;
+  margin: 0px;
 }
 
 .topbar {
   display: flex;
   justify-content: space-between;
   align-items: start;
-  padding: 20px 40px;
+  padding: 20px 30px;
   box-sizing: border-box;
   font-size: 36px;
   width: 100%;
@@ -28,7 +29,7 @@ a {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding: 10px;
+  padding: 5px;
   box-sizing: border-box;
 }
 
@@ -62,7 +63,7 @@ a {
   /* nooit naar nieuwe rij */
   justify-content: space-between;
   width: 100%;
-  gap: 10px;
+  gap: 0px;
   padding: 20px;
   box-sizing: border-box;
 }
