@@ -467,8 +467,8 @@
     for (const [index, imageClicked] of images.entries()) {
       imageClicked.addEventListener("click", function (e) {
         e.stopPropagation();
-        counter = index + 1;
-        image.src = `img/${counter}.png`;
+        counter = index;
+        image.src = imageClicked.src;
         document.body.classList.toggle("foto-container-open");
         fotoContainer.classList.toggle("foto-container-open");
 
@@ -501,11 +501,11 @@
 
     function nextImage() {
       counter = (counter + 1) % amountOfImages;
-      image.src = `img/${counter}.png`;
+      image.src = images[counter].src;
     }
     function previousImage() {
       counter = (counter - 1 + amountOfImages) % amountOfImages;
-      image.src = `img/${counter}.png`;
+      image.src = images[counter].src;
     }
   </script>
 </body>
