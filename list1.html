@@ -10,6 +10,11 @@
 
 <body>
   <style>
+    body.foto-container-open {
+      height: 95vh;
+      overflow-y: hidden;
+    }
+
     #foto-container {
       position: fixed;
       top: 0;
@@ -21,6 +26,10 @@
       justify-content: center;
       z-index: 1;
       background-color: white;
+    }
+
+    #foto-container.foto-container-open {
+      display: flex;
     }
 
     .foto-parent {
@@ -460,14 +469,16 @@
         e.stopPropagation();
         counter = index + 1;
         image.src = `img/${counter}.png`;
-        fotoContainer.style.display = "flex";
+        document.body.classList.toggle("foto-container-open");
+        fotoContainer.classList.toggle("foto-container-open");
 
         if (clickOutsideHandler) document.removeEventListener("click", clickOutsideHandler);
 
         // Clicking outside the image will close the imageContainer
         clickOutsideHandler = function (e) {
-          if (!image.contains(e.target) && !nextImageButton.contains(e.target) && !previousImageButton.contains(e.target) && fotoContainer.style.display === "flex") {
-            fotoContainer.style.display = "none";
+          if (!image.contains(e.target) && !nextImageButton.contains(e.target) && !previousImageButton.contains(e.target) && fotoContainer.classList.contains("foto-container-open")) {
+            document.body.classList.toggle("foto-container-open");
+            fotoContainer.classList.toggle("foto-container-open");
           }
         };
 
@@ -477,7 +488,10 @@
 
     // Arrow buttons left/right will update image
     document.addEventListener("keyup", function (e) {
-      if (e.code === "Escape") fotoContainer.style.display = "none";
+      if (e.code === "Escape") {
+        document.body.classList.toggle("foto-container-open");
+        fotoContainer.classList.toggle("foto-container-open");
+      }
       else if (e.code === "ArrowLeft") previousImage();
       else if (e.code === "ArrowRight") nextImage();
     });
