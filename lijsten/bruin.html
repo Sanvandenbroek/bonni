@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>list</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+  <style>
+    body.foto-container-open {
+      height: 95vh;
+      overflow-y: hidden;
+    }
+
+    #foto-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 1;
+      background-color: white;
+    }
+
+    #foto-container.foto-container-open {
+      display: flex;
+    }
+
+    .foto-parent {
+      max-width: 80%;
+      max-height: 70vh;
+    }
+
+    .foto-parent img {
+      display: block;
+      max-height: 70vh;
+      max-width: 100%;
+      height: auto;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .foto-buttons {
+      position: fixed;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: black;
+      font-size: 50px;
+      padding: 10px 20px;
+      z-index: 10;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    #previousImage {
+      left: 20px;
+    }
+
+    #nextImage {
+      right: 20px;
+    }
+
+    @media(max-width: 700px) {
+      .foto-parent {
+        max-width: 70%;
+      }
+
+      .foto-buttons {
+        padding: 10px 10px;
+      }
+
+      #previousImage {
+        left: 0;
+      }
+
+      #nextImage {
+        right: 0;
+      }
+    }
+  </style>
+
+  <nav class="topbar">
+    <a href="index.html" class="top-left">Home</a>
+    <a href="boek1.html" class="top-right">Book</a>
+  </nav>
+
+
+  <div id="foto-container">
+    <div>
+      <span id="fotoTitel"></span>
+      <span id="fotoJaar"></span>
+    </div>
+    <button id="previousImage" class="foto-buttons">
+      <span>&lt;</span>
+    </button>
+
+    <div class="foto-parent">
+      <img id="image" alt="" />
+    </div>
+
+    <button id="nextImage" class="foto-buttons">
+      <span>&gt;</span>
+    </button>
+  </div>
+
+  <div class="container">
+
+    <div class="box">
+      <span class="number">1</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 1" data-jaar="1970" src="/img/foto's bruin 1950:60/50-p2-1.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="box">
+      <span class="number">2</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 2" data-jaar="1971" src="/img/foto's bruin 1950:60/50-p2-2.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="box">
+      <span class="number">3</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 3" data-jaar="1972" src="/img/foto's bruin 1950:60/50-p2-3.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="box">
+      <span class="number">4</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 1" data-jaar="1973" src="/img/foto's bruin 1950:60/50-p2-4.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="box">
+      <span class="number">5</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 1" data-jaar="1971" src="/img/foto's bruin 1950:60/50-p2-5.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="box">
+      <span class="number">6</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 1" data-jaar="1980" src="/img/foto's bruin 1950:60/50-p3-1.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="box">
+      <span class="number">7</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 1" data-jaar="1971" src="/img/foto's bruin 1950:60/50-p3-2.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="box">
+      <span class="number">8</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 1" data-jaar="1971" src="/img/foto's bruin 1950:60/50-p3-3.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="box">
+      <span class="number">9</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 1" data-jaar="1971" src="/img/foto's rood album mid 1970 /rood-p5-4.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="box">
+      <span class="number">10</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 1" data-jaar="1971" src="/img/foto's rood album mid 1970 /rood-p5-5.jpg" alt="">
+      </div>
+    </div>
+    <div class="box">
+      <span class="number">11</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 1" data-jaar="1971" src="/img/foto's rood album mid 1970 /rood-p5-6.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="box">
+      <span class="number">12</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 1" data-jaar="1971" src="/img/foto's rood album mid 1970 /rood-p6-1.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="box">
+      <span class="number">13</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 1" data-jaar="1971" src="/img/foto's rood album mid 1970 /rood-p6-2.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="box">
+      <span class="number">14</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 1" data-jaar="1971" src="/img/foto's rood album mid 1970 /rood-p6-3.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="box">
+      <span class="number">15</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 1" data-jaar="1971" src="/img/foto's rood album mid 1970 /rood-p6-4.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="box">
+      <span class="number">16</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 1" data-jaar="1971" src="/img/foto's rood album mid 1970 /rood-p6-5.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="box">
+      <span class="number">17</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 1" data-jaar="1971" src="/img/foto's rood album mid 1970 /rood-p6-6.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="box">
+      <span class="number">18</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 1" data-jaar="1971" src="/img/foto's rood album mid 1970 /rood-p7-1.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="box">
+      <span class="number">19</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 1" data-jaar="1971" src="/img/foto's rood album mid 1970 /rood-p7-2.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="box">
+      <span class="number">20</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 1" data-jaar="1971" src="/img/foto's rood album mid 1970 /rood-p7-3.jpg" alt="">
+      </div>
+    </div>
+    <div class="box">
+      <span class="number">21</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 1" data-jaar="1971" src="/img/foto's rood album mid 1970 /rood-p7-4.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="box">
+      <span class="number">22</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 1" data-jaar="1971" src="/img/foto's rood album mid 1970 /rood-p7-5.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="box">
+      <span class="number">23</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 1" data-jaar="1971" src="/img/foto's rood album mid 1970 /rood-p7-6.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="box">
+      <span class="number">24</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 1" data-jaar="1971" src="/img/foto's rood album mid 1970 /rood-p8-1.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="box">
+      <span class="number">25</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 1" data-jaar="1971" src="/img/foto's rood album mid 1970 /rood-p8-2.jpg" alt="">
+      </div>
+    </div>
+     <div class="box">
+      <span class="number">26</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 1" data-jaar="1970" src="/img/foto's rood album mid 1970 /rood-p8-3.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="box">
+      <span class="number">27</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 2" data-jaar="1971" src="/img/foto's rood album mid 1970 /rood-p8-4.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="box">
+      <span class="number">28</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 3" data-jaar="1972" src="/img/foto's rood album mid 1970 /rood-p9-1.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="box">
+      <span class="number">29</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 1" data-jaar="1973" src="/img/foto's rood album mid 1970 /rood-p9-2.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="box">
+      <span class="number">30</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 1" data-jaar="1971" src="/img/foto's rood album mid 1970 /rood-p9-3.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="box">
+      <span class="number">31</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 1" data-jaar="1980" src="/img/foto's rood album mid 1970 /rood-p9-4.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="box">
+      <span class="number">32</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 1" data-jaar="1971" src="/img/foto's rood album mid 1970 /rood-p9-5.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="box">
+      <span class="number">33</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 1" data-jaar="1971" src="/img/foto's rood album mid 1970 /rood-p9-6.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="box">
+      <span class="number">34</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 1" data-jaar="1971" src="/img/foto's rood album mid 1970 /rood-p10-1.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="box">
+      <span class="number">35</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 1" data-jaar="1971" src="/img/foto's rood album mid 1970 /rood-p10-2.jpg" alt="">
+      </div>
+    </div>
+    <div class="box">
+      <span class="number">36</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 1" data-jaar="1971" src="/img/foto's rood album mid 1970 /rood-p10-3.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="box">
+      <span class="number">37</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 1" data-jaar="1971" src="/img/foto's rood album mid 1970 /rood-p10-4.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="box">
+      <span class="number">38</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 1" data-jaar="1971" src="/img/foto's rood album mid 1970 /rood-p11-1.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="box">
+      <span class="number">39</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 1" data-jaar="1971" src="/img/foto's rood album mid 1970 /rood-p11-2.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="box">
+      <span class="number">40</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 1" data-jaar="1971" src="/img/foto's rood album mid 1970 /rood-p11-3.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="box">
+      <span class="number">41</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 1" data-jaar="1971" src="/img/foto's rood album mid 1970 /rood-p12-1.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="box">
+      <span class="number">42</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 1" data-jaar="1971" src="/img/foto's rood album mid 1970 /rood-p12-2.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="box">
+      <span class="number">43</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 1" data-jaar="1971" src="/img/foto's rood album mid 1970 /rood-p13-1.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="box">
+      <span class="number">44</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 1" data-jaar="1971" src="/img/foto's rood album mid 1970 /rood-p13-2.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="box">
+      <span class="number">45</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 1" data-jaar="1971" src="/img/foto's rood album mid 1970 /rood-p13-3.jpg" alt="">
+      </div>
+    </div>
+    <div class="box">
+      <span class="number">46</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 1" data-jaar="1971" src="/img/foto's rood album mid 1970 /rood-p13-4.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="box">
+      <span class="number">47</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 1" data-jaar="1971" src="/img/foto's rood album mid 1970 /rood-p14-1.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="box">
+      <span class="number">48</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 1" data-jaar="1971" src="/img/foto's rood album mid 1970 /rood-p14-2.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="box">
+      <span class="number">49</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 1" data-jaar="1971" src="/img/foto's rood album mid 1970 /rood-p14-3.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="box">
+      <span class="number">50</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 1" data-jaar="1971" src="/img/foto's rood album mid 1970 /rood-p14-4.jpg" alt="">
+      </div>
+    </div>
+      <div class="box">
+      <span class="number">51</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 1" data-jaar="1970" src="/img/foto's rood album mid 1970 /rood-p15-1.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="box">
+      <span class="number">52</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 2" data-jaar="1971" src="/img/foto's rood album mid 1970 /rood-p16-1.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="box">
+      <span class="number">53</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 3" data-jaar="1972" src="/img/foto's rood album mid 1970 /rood-p17-1.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="box">
+      <span class="number">54</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 1" data-jaar="1973" src="/img/foto's rood album mid 1970 /rood-p17-2.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="box">
+      <span class="number">55</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 1" data-jaar="1971" src="/img/foto's rood album mid 1970 /rood-p18-1.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="box">
+      <span class="number">56</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 1" data-jaar="1980" src="/img/foto's rood album mid 1970 /rood-p19-1.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="box">
+      <span class="number">57</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 1" data-jaar="1971" src="/img/foto's rood album mid 1970 /rood-p19-2.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="box">
+      <span class="number">58</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 1" data-jaar="1971" src="/img/foto's rood album mid 1970 /rood-p19-3.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="box">
+      <span class="number">59</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 1" data-jaar="1971" src="/img/foto's rood album mid 1970 /rood-p19-4.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="box">
+      <span class="number">60</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 1" data-jaar="1971" src="/img/foto's rood album mid 1970 /rood-p19-5.jpg" alt="">
+      </div>
+    </div>
+    <div class="box">
+      <span class="number">61</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 1" data-jaar="1971" src="/img/foto's rood album mid 1970 /rood-p20-1.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="box">
+      <span class="number">62</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 1" data-jaar="1971" src="/img/foto's rood album mid 1970 /rood-p20-2.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="box">
+      <span class="number">63</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 1" data-jaar="1971" src="/img/foto's rood album mid 1970 /rood-p20-3.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="box">
+      <span class="number">64</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 1" data-jaar="1971" src="/img/foto's rood album mid 1970 /rood-p20-4.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="box">
+      <span class="number">65</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 1" data-jaar="1971" src="/img/foto's rood album mid 1970 /rood-p20-5.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="box">
+      <span class="number">66</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 1" data-jaar="1971" src="/img/foto's rood album mid 1970 /rood-p20-6.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="box">
+      <span class="number">67</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 1" data-jaar="1971" src="/img/foto's rood album mid 1970 /rood-p21-1.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="box">
+      <span class="number">68</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 1" data-jaar="1971" src="/img/foto's rood album mid 1970 /rood-p21-2.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="box">
+      <span class="number">69</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 1" data-jaar="1971" src="/img/foto's rood album mid 1970 /rood-p21-3.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="box">
+      <span class="number">70</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 1" data-jaar="1971" src="/img/foto's rood album mid 1970 /rood-p21-4.jpg" alt="">
+      </div>
+    </div>
+    <div class="box">
+      <span class="number">71</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 1" data-jaar="1971" src="/img/foto's rood album mid 1970 /rood-p22-1.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="box">
+      <span class="number">72</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 1" data-jaar="1971" src="/img/foto's rood album mid 1970 /rood-p22-2.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="box">
+      <span class="number">73</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 1" data-jaar="1971" src="/img/foto's rood album mid 1970 /rood-p23-1.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="box">
+      <span class="number">74</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 1" data-jaar="1971" src="/img/foto's rood album mid 1970 /rood-p23-2.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="box">
+      <span class="number">75</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 1" data-jaar="1971" src="/img/foto's rood album mid 1970 /rood-p23-3.jpg" alt="">
+      </div>
+    </div>
+     <div class="box">
+      <span class="number">76</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 1" data-jaar="1970" src="/img" alt="">
+      </div>
+    </div>
+
+    <div class="box">
+      <span class="number">77</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 2" data-jaar="1971" src="/img" alt="">
+      </div>
+    </div>
+
+    <div class="box">
+      <span class="number">78</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 3" data-jaar="1972" src="/img" alt="">
+      </div>
+    </div>
+
+    <div class="box">
+      <span class="number">79</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 1" data-jaar="1973" src="/img" alt="">
+      </div>
+    </div>
+
+    <div class="box">
+      <span class="number">80</span>
+      <div class="image-wrapper">
+        <img class="list-img" data-titel="test 1" data-jaar="1971" src="/img" alt="">
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    const images = document.querySelectorAll(".list-img");
+    const amountOfImages = images.length;
+    const fotoContainer = document.getElementById("foto-container");
+    const image = document.getElementById("image");
+    const fotoTitel = document.getElementById("fotoTitel");
+    const fotoJaar = document.getElementById("fotoJaar");
+    const nextImageButton = document.getElementById("nextImage");
+    const previousImageButton = document.getElementById("previousImage");
+    let counter;
+    let clickOutsideHandler;
+
+    for (const [index, imageClicked] of images.entries()) {
+      imageClicked.addEventListener("click", function (e) {
+        e.stopPropagation();
+        counter = index;
+        image.src = imageClicked.src;
+        fotoTitel.textContent = imageClicked.getAttribute("data-titel");
+        fotoJaar.textContent = imageClicked.getAttribute("data-jaar");
+        document.body.classList.add("foto-container-open");
+        fotoContainer.classList.add("foto-container-open");
+
+        if (clickOutsideHandler) document.removeEventListener("click", clickOutsideHandler);
+
+        // Clicking outside the image will close the imageContainer
+        clickOutsideHandler = function (e) {
+          if (!image.contains(e.target) && !nextImageButton.contains(e.target) && !previousImageButton.contains(e.target)) {
+            closeFotoContainer();
+          }
+        };
+
+        document.addEventListener("click", clickOutsideHandler);
+      });
+    }
+
+    // Arrow buttons left/right will update image
+    document.addEventListener("keyup", function (e) {
+      // only do things when the foto-container is actually open
+      if (!fotoContainer.classList.contains("foto-container-open")) return;
+
+      if (e.code === "Escape") {
+        closeFotoContainer();
+      }
+      else if (e.code === "ArrowLeft") previousImage();
+      else if (e.code === "ArrowRight") nextImage();
+    });
+
+    nextImageButton.addEventListener("click", () => nextImage());
+    previousImageButton.addEventListener("click", () => previousImage());
+
+    function closeFotoContainer() {
+      document.body.classList.remove("foto-container-open");
+      fotoContainer.classList.remove("foto-container-open");
+      if (clickOutsideHandler) {
+        document.removeEventListener("click", clickOutsideHandler);
+        clickOutsideHandler = null;
+      }
+    }
+    function nextImage() {
+      counter = (counter + 1) % amountOfImages;
+      image.src = images[counter].src;
+      fotoTitel.textContent = images[counter].getAttribute("data-titel");
+      fotoJaar.textContent = images[counter].getAttribute("data-jaar");
+
+    }
+    function previousImage() {
+      counter = (counter - 1 + amountOfImages) % amountOfImages;
+      image.src = images[counter].src;
+      fotoTitel.textContent = images[counter].getAttribute("data-titel");
+      fotoJaar.textContent = images[counter].getAttribute("data-jaar");
+
+    }
+  </script>
+</body>
+
+</html>
