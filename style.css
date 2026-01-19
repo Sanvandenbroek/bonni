@@ -27,6 +27,7 @@ img {
   position: relative;
   z-index: 100;
 }
+
 .topbar-left,
 .topbar-right {
   display: flex;
@@ -130,6 +131,12 @@ a {
 
 .oval-container {
   pointer-events: auto;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-70%);
+  width: 1000px;
+  height: 500px;
+  z-index: 10;
 }
 
 
@@ -193,6 +200,12 @@ a {
     width: 200px;
     left: 200px;
   }
+
+  .oval-container {
+    width: 400px;
+    height: 200px;
+  }
+
 }
 
 @media(max-width: 550px) {
@@ -216,6 +229,11 @@ a {
     width: 100px;
     top: 200px;
     left: 100px
+  }
+
+  .oval-container {
+    width: 400px;
+    height: 200px;
   }
 }
 
