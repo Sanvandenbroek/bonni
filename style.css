@@ -62,13 +62,12 @@ a {
 
 .list-img {
   /* Set the max height to a specific value, max-width to 100% and the auto's will automatically size the image correctly */
-  max-height: 300px;
+  max-height: 100px;
   max-width: 100%;
   width: auto;
   height: auto;
   object-fit: contain;
   cursor: pointer;
-
 }
 
 
