@@ -7,6 +7,14 @@ html, body {
   touch-action: manipulation;
 }
 
+/* Make sure images don't get selected and turn another color */
+img {
+  user-select: none;
+  /* Add this too */
+  -webkit-user-select: none;
+  /* For Safari */
+}
+
 .topbar {
   display: flex;
   justify-content: space-between;
