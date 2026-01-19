@@ -76,7 +76,6 @@ a {
   font-family: "HomeSweetHome";
   font-size: 36px;
   font-weight: 500;
-  margin-top: 4px;
 }
 
 .image-wrapper {
@@ -205,6 +204,11 @@ a {
     height: 200px;
   }
 
+
+  #fotoTitel,
+  #fotoJaar {
+    font-size: 20px;
+  }
 }
 
 @media(max-width: 550px) {
