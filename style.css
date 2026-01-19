@@ -61,8 +61,7 @@ a {
 }
 
 
-#fotoTitel,
-#fotoJaar {
+#titel {
   font-family: "HomeSweetHome";
   font-size: 36px;
   font-weight: 500;
@@ -195,8 +194,7 @@ a {
   }
 
 
-  #fotoTitel,
-  #fotoJaar {
+  #titel {
     font-size: 20px;
   }
 }
