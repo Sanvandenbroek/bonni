@@ -19,7 +19,15 @@ html, body {
   position: relative;
   z-index: 100;
 }
+.topbar-left,
+.topbar-right {
+  display: flex;
+  flex-direction: column;
+}
 
+.topbar-right {
+  text-align: right;
+}
 
 a {
   text-decoration: none;
@@ -51,6 +59,16 @@ a {
   height: auto;
   object-fit: contain;
   cursor: pointer;
+
+}
+
+
+#fotoTitel,
+#fotoJaar {
+  font-family: "HomeSweetHome";
+  font-size: 36px;
+  font-weight: 500;
+  margin-top: 4px;
 }
 
 .image-wrapper {
