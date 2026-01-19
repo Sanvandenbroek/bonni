@@ -28,16 +28,6 @@ img {
   z-index: 100;
 }
 
-.topbar-left,
-.topbar-right {
-  display: flex;
-  flex-direction: column;
-}
-
-.topbar-right {
-  text-align: right;
-}
-
 a {
   text-decoration: none;
   color: black;
