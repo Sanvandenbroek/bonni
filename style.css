@@ -63,7 +63,7 @@ a {
 
 #titel {
   font-family: "HomeSweetHome";
-  font-size: 36px;
+  font-size: 30px;
   font-weight: 500;
 }
 
@@ -157,15 +157,6 @@ a {
   transform: translate(-50%, -50%);
 }
 
-/* Pause the entire container rotation when hovering any image */
-.oval-container:has(img:hover) {
-  animation-play-state: paused;
-}
-
-/* Also pause all items' counter-rotation */
-.oval-container:has(img:hover) .item {
-  animation-play-state: paused;
-}
 
 @media(max-width: 1024px) {
   #jaar {
